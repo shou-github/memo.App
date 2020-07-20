@@ -12,4 +12,17 @@
           <p style="font-size:40px; font-weight:bold; color:black;"><i class="far fa-edit"></i>memo.App</p>  
         @endif         
     </nav>
+    <time style="font-style:italic;"></time>   
 </header>
+
+<script>
+      window.addEventListener("load",function(){
+        var ele=document.getElementsByTagName("time")[0];
+        setInterval(function(){
+          //現在時刻のDateオブジェクトを生成
+          var date = new Date();
+          ele.innerHTML=date;
+      },100);
+      },false)
+</script>
+    

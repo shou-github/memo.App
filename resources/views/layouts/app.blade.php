@@ -36,10 +36,9 @@
 
         </script>
 
-    
     </head>
 
-    <body style="height:100%; background-color: #FCE3BD;">
+    <body style="height:100%; background: linear-gradient(to right, rgb(251, 255, 17), rgb(211, 255, 17));">
 
         {{-- ナビゲーションバー --}}
         @include('commons.navbar')
@@ -84,15 +83,15 @@
                 });
             }
         };
-    })(Array.prototype);
-
-    document.addEventListener('readystatechange', function() {
-        if (document.readyState === 'complete') {
-            LightTableFilter.init();
-        }
-    });
-
-})(document);
+            })(Array.prototype);
+        
+            document.addEventListener('readystatechange', function() {
+                if (document.readyState === 'complete') {
+                    LightTableFilter.init();
+                }
+            });
+        
+        })(document);
            
            
 
@@ -105,10 +104,10 @@
                 });
             }
             
-        
-        
-
             
+            
+            
+        
        </script>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

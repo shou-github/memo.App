@@ -48,5 +48,7 @@ class User extends Authenticatable
     {
         $this->loadCount('memos');
     }
+    
+    
 }
 

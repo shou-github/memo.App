@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84631bc55f46e53c686c38c9bdea0533",
+    "content-hash": "e39a78caf6af092fe8a5733143127f4f",
     "packages": [
         {
             "name": "creativeorange/gravatar",

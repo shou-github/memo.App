@@ -24,14 +24,19 @@
                     {!! Form::label('content', 'content') !!}
                 </div>
                 <form action="">
+               
                     <input class="chgColor btn btn-dark"  type="button" value="black"/>
                     <input class="chgColor btn btn-success"  type="button" value="green"/>
                     <input class="chgColor btn btn-danger" type="button" value="red"/>
                     <input class="chgColor btn btn-primary" type="button" value="blue"/>
                 <p>
-                <textarea id="textarea" contenteditable class="form-control" style="width:920px; height:240px;" onKeyUp="countLength(value, 'textlength1');" input name="content"></textarea>
+                <textarea id="textarea" contenteditable class="form-control" style="height:240px;" onKeyUp="countLength(value, 'textlength1');" name="content" cols="50" rows="10" id="content">{{$memo->content }}</textarea>
                 </p>
+                
+                
                 </form>
+                
+                
 
         </div>
     </div>

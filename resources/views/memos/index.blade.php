@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-            
+         
+    
 
         <div class="text-center mb-5" style="font-size:50px;">
-            <p>Welcome back <?php $user = Auth::user(); ?>{{ $user->name }} !!</p>
+            <p>Welcome back <?php $user = Auth::user(); ?>{{ $user->name }} ! !</p>
             {!! link_to_route('memos.create', 'New entry', [], ['class' => 'btn btn-lg btn-info']) !!}
         </div>
 
     @if (count($memos) > 0)
-    
     <section class="container">
 
     <i class="fas fa-search mr-2" style="font-size:30px;"></i><input type="search" style="width:250px;" class="light-table-filter mb-3" data-table="order-table" placeholder="search"/>
@@ -20,6 +20,7 @@
                     <th>title</th>
                     <th>editing</th>
                     <th>deletion</th>
+                    <th>update</th>
                 </tr>
             </thead>
             <tbody style="font-size:30px">
@@ -34,8 +35,10 @@
                     <td onclick="return Delete_check()">{!! Form::model($memo, ['route' => ['memos.destroy', $memo->id], 'method' => 'delete']) !!}
                     {!! Form::submit('delete', ['class' => 'btn btn-lg btn-danger']) !!}
                     {!! Form::close() !!}</td>
+                    <td>{{ $memo->updated_at }}</td>
                 @endforeach
             </tbody>
         </table>
     @endif
+    
 @endsection
