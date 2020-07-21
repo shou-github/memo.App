@@ -86,17 +86,6 @@
             });
         
         })(document);
-           
-           
-
-            let changeColorBtn = document.getElementsByClassName('chgColor');
-            let textarea = document.getElementById('content');
-            for (let i = 0; i < changeColorBtn.length; i++) {
-                changeColorBtn[i].addEventListener('click', function () {
-                    let color = this.value;
-                    textarea.style.color = color;
-                });
-            }
             
 
             function Clipboard() {
@@ -130,14 +119,9 @@
           if (!window.speechSynthesis) return;
           speechSynthesis.cancel();
         });
-        
-        
-        
         Resources
 
-            
-            
-        
+
        </script>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

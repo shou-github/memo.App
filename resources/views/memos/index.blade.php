@@ -4,7 +4,7 @@
          
     
 
-        <div class="text-center mb-5" style="font-size:50px;">
+        <div class="text-center mb-5" style="font-size:70px; font-style:oblique; font-weight:bold; color: #1E90FF;-webkit-text-stroke: 1px white;">
             <p>Welcome back <?php $user = Auth::user(); ?>{{ $user->name }} ! !</p>
             {!! link_to_route('memos.create', 'New entry', [], ['class' => 'btn btn-lg btn-info']) !!}
         </div>

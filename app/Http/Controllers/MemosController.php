@@ -53,7 +53,7 @@ class MemosController extends Controller
         
        $request->validate([
             'title' => 'required|max:20',
-            'content' => 'required|max:255',
+            'content' => 'required',
         ]);
 
 
@@ -102,7 +102,7 @@ class MemosController extends Controller
         //
         $this->validate($request, [
             'title' => 'required|max:20', 
-            'content' => 'required|max:255',
+            'content' => 'required',
         ]);
         
         $memo = Memo::findOrFail($id);

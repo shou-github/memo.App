@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h1 style="color: orange;-webkit-text-stroke: 1px white; font-weight:bold; font-size:60px;">Sign up</h1>
     </div>
 
     <div class="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-sm-6 offset-sm-3" style="color: white;">
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">

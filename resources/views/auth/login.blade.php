@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-sm-6 offset-sm-3" style="color: white;">
 
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
