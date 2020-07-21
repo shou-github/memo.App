@@ -18,9 +18,9 @@
                 <tr>
                     <th >id</th>
                     <th>title</th>
+                    <th>update</th>
                     <th>editing</th>
                     <th>deletion</th>
-                    <th>update</th>
                 </tr>
             </thead>
             <tbody style="font-size:30px">
@@ -29,13 +29,12 @@
                     {{-- タスク詳細ページへのリンク --}}
                     <td>{{ $memo->id }}</td>
                     <td>{{ $memo->title }}</td>
-                    
+                    <td style="font-family:arial narrow; font-size:20px;">{{ $memo->updated_at }}</td>
                     <td>{!! link_to_route('memos.edit', 'Edit', ['memo' => $memo->id], ['class' => 'btn btn-lg btn-success']) !!}
                     </td>
                     <td onclick="return Delete_check()">{!! Form::model($memo, ['route' => ['memos.destroy', $memo->id], 'method' => 'delete']) !!}
                     {!! Form::submit('delete', ['class' => 'btn btn-lg btn-danger']) !!}
                     {!! Form::close() !!}</td>
-                    <td>{{ $memo->updated_at }}</td>
                 @endforeach
             </tbody>
         </table>

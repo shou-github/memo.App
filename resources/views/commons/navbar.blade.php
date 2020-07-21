@@ -12,7 +12,7 @@
           <p style="font-size:40px; font-weight:bold; color:black;"><i class="far fa-edit"></i>memo.App</p>  
         @endif         
     </nav>
-    <time style="font-style:italic;"></time>   
+    <time style="font-family:arial narrow; font-weight:bold;"></time>   
 </header>
 
 <script>

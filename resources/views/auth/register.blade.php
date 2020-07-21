@@ -31,7 +31,7 @@
 
                 {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
-            <p class="mt-2">Already registered? {!! link_to_route('login', 'Login') !!}</p>
+            {!! link_to_route('login', 'Login', [], ['class' => 'btn btn-lg btn-success']) !!}
         </div>
     </div>
 @endsection

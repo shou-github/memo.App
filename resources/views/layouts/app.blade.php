@@ -8,9 +8,6 @@
         <link rel="shortcut icon" href="{{ secure_asset('favicon.ico') }}">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script language="JavaScript" type="text/JavaScript">
-            function countLength( text, field ) {
-                document.getElementById(field).innerHTML = text.length;
-        }
             
             function Delete_check(){
                 let checked = confirm("Can I delete it?");
@@ -28,17 +25,14 @@
                     return false;
             }
         }
-        
-        document.execCommand('bold')
-
-
-        document.execCommand('italic')
-
         </script>
 
     </head>
-
-    <body style="height:100%; background: linear-gradient(to right, rgb(251, 255, 17), rgb(211, 255, 17));">
+@if (Auth::check())
+    <body style="background:url(sky.jpg); center no-repeat; background-size: cover;">
+@else
+    <body style="background:url(water.jpg); center no-repeat; background-size: cover;">
+@endif
 
         {{-- ナビゲーションバー --}}
         @include('commons.navbar')
@@ -52,11 +46,11 @@
             @yield('content')
         </div>
        
-       <script>
+    <script>
            (function(document) {
-    'use strict';
+    '       use strict';
 
-    var LightTableFilter = (function(Arr) {
+        var LightTableFilter = (function(Arr) {
 
         var _input;
 
@@ -96,7 +90,7 @@
            
 
             let changeColorBtn = document.getElementsByClassName('chgColor');
-            let textarea = document.getElementById('textarea');
+            let textarea = document.getElementById('content');
             for (let i = 0; i < changeColorBtn.length; i++) {
                 changeColorBtn[i].addEventListener('click', function () {
                     let color = this.value;
@@ -104,7 +98,43 @@
                 });
             }
             
+
+            function Clipboard() {
+		        var copyTarget = document.getElementById("content");
+		        copyTarget.select();
+	            document.execCommand("Copy");
+		    }
+
+            function ShowLength( str ) {
+	            str=str.replace(/\n/g, ""); 
+                document.getElementById("inputlength").innerHTML = ""+ str.length ;
+             }
+             
+             
             
+ 
+        button1.addEventListener("click", () => {
+          if (!window.speechSynthesis) return;
+          let u = new SpeechSynthesisUtterance(content.value);
+          u.lang = "en";
+          speechSynthesis.speak(u);
+        });
+        
+        button2.addEventListener("click", () => {
+          if (!window.speechSynthesis) return;
+          let u = new SpeechSynthesisUtterance(content.value);
+          u.lang = "ja";
+          speechSynthesis.speak(u);
+        });
+        button3.addEventListener("click", () => {
+          if (!window.speechSynthesis) return;
+          speechSynthesis.cancel();
+        });
+        
+        
+        
+        Resources
+
             
             
         

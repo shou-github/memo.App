@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Log in</h1>
+        <h1 style="font-weight:bold; font-size:60px; color: #FFFF00;-webkit-text-stroke: 1px #00ffff; font-style:italic;">Log in</h1>
     </div>
 
     <div class="row">
@@ -21,7 +21,7 @@
 
                 {!! Form::submit('Log in', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
-            <p class="mt-2">New user? {!! link_to_route('signup.get', 'Sign up') !!}</p>
+                {!! link_to_route('signup.get', 'Sign up', [], ['class' => 'btn btn-lg btn-success']) !!}
     </div>
     
 @endsection

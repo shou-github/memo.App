@@ -15,7 +15,7 @@ class MemosController extends Controller
            
             $user = \Auth::user();
            
-            $memos = $user->memos()->orderBy('created_at', 'desc')->paginate(10);
+            $memos = $user->memos()->orderBy('updated_at', 'desc')->paginate(10);
 
            
             return view('memos.index', [
