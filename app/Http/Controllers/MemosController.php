@@ -10,22 +10,12 @@ class MemosController extends Controller
 {
     public function index()
     {
-        $data = [];
-        if (\Auth::check()) { 
-           
-            $user = \Auth::user();
-           
-            $memos = $user->memos()->orderBy('updated_at', 'desc')->paginate(10);
-
-           
+        
+            
+        $memos = Memo::orderBy('updated_at', 'desc')->paginate(25);
             return view('memos.index', [
                 'memos' => $memos,
             ]);
-            return redirect('/');
-        }
-
-        
-        return view('welcome', $data);
         
     }
 
@@ -57,10 +47,10 @@ class MemosController extends Controller
         ]);
 
 
-        $request->user()->memos()->create([
-            'content' => $request->content,
-            'title' => $request->title,
-        ]);
+        $memo = new Memo;
+        $memo->title = $request->title;
+        $memo->content = $request->content;
+        $memo->save();
 
 
         return redirect('/');
@@ -72,13 +62,13 @@ class MemosController extends Controller
         $memo = Memo::findOrFail($id);
         
         
-         if (\Auth::id() === $memo->user_id) {
+         
             return view('memos.show', [
            
             'memo' => $memo,
         ]);
             return redirect('/');
-        }
+        
         
     }
     
@@ -88,12 +78,10 @@ class MemosController extends Controller
         $memo = Memo::findOrFail($id);
         
         
-        
-        if (\Auth::id() === $memo->user_id) {
             return view('memos.edit', [
             'memo' => $memo,
         ]);
-        }
+        
         return redirect('/');
     }
 
@@ -108,12 +96,12 @@ class MemosController extends Controller
         $memo = Memo::findOrFail($id);
         
         
-        if (\Auth::id() === $memo->user_id) {
-            $memo->title = $request->title;
+        
+        $memo->title = $request->title;
         $memo->content = $request->content;
         $memo->save();
             
-        }
+        
         
         
         return redirect('/');
@@ -126,11 +114,8 @@ class MemosController extends Controller
         
         $memo = Memo::findOrFail($id);
 
-        // 認証済みユーザ（閲覧者）がその投稿の所有者である場合は、投稿を削除
-        if (\Auth::id() === $memo->user_id) {
             $memo->delete();
-        }
-        // 前のURLへリダイレクトさせる
+        
         return redirect('/');
     }
 }

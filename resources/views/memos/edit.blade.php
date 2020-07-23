@@ -1,20 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    
-        <div class="row">
+  <h1 class="text-center" style="color: #FFFF00;-webkit-text-stroke: 2px #00FFFF; font-style:italic; font-weight:bold; font-size:60px;">Edit page</h1>
+   <div class="row">
         <div class="offset-sm-2 col-sm-10">
-            
-            {!! link_to_route('memos.index', 'Back', [], ['class' => 'btn btn-lg btn-success']) !!}
             {!! Form::model($memo, ['route' => ['memos.update', $memo->id], 'method' => 'put']) !!}
-            <div class="text-right">
-            {!! Form::submit('Save', ['class' => 'btn btn-primary w-25']) !!}
-            </div>
+            
+           <!--トップページにもどる-->
+            {!! link_to_route('memos.index', 'Back', [], ['class' => 'btn btn-lg btn-success']) !!}
+            <!--セーブ-->
+            <div class="float-right">{!! Form::submit('Save', ['class' => 'btn btn-lg btn-primary']) !!}</div>
+  
+           
+           
                 <div class="form-group" style="font-size:30px;">
                     {!! Form::label('title', 'title') !!}
                     {!! Form::text('title', null, ['class' => 'form-control']) !!}
                 </div>
                
+               <!--textareaの文字数表示-->
                 <div class="form-group" style="font-size:30px;">  
                    <div class="form-inline float-right">
                         <p>Count :</p>
@@ -22,25 +26,36 @@
                     </div>
                     {!! Form::label('content', 'content') !!}
                 </div>
-                <form action="">
-                    
+                
+                    <!--音声読み上げ機能-->
                     <p> 
+                        <!--英語-->
                         <button class="btn" style="background-color:#0000FF; color:white;" id="button1" type="button">English</button>
+                        <!--日本語-->
                         <button class="btn" style="background-color:#FF6600; color:white;" id="button2" type="button">Japanese</button>
+                        <!--読み上げ中止-->
                         <button class="btn" style="background-color:red; color:white;" id="button3" type="button">stop</button>
+                        
+                    <!--textarea内の文字を選択する機能-->
                         <button class="btn" style="background-color:#5D99FF; color:white;" onclick="Clipboard()" class="put" type="button">select all</button>
-                        <button id="tweet" class="btn" style="background-color:#00aced; color:white;" type="button"><i class="fab fa-twitter"></i> Tweet</button>
-                     </p>
-                    <p>
-                        <textarea contenteditable class="form-control" style="height:240px;" onkeyup="ShowLength(value);" name="content" cols="50" rows="10" id="content">{{ $memo->content }}</textarea><br>
-                    </p>
-                </form>
+                        
+                       <!--twitter共有機能-->
+                        <button id="tweet" class="btn" style="background-color:#00aced; color:white; float:right;" type="button"><i class="fab fa-twitter"></i> Tweet</button>
+                        <!--textareaの文字をダウンロードする機能-->
+                        <a href="" id="DLlink" download="{{ $memo->content }}.txt" class="btn" style="background-color:#b8860b; color:white; float:right;" type="button"><i class="fas fa-download"></i> download</a>
+                   </p>
+                       
+                    <textarea contenteditable class="form-control"  onkeyup="ShowLength(value);" name="content" cols="50" rows="18" id="content">{{ $memo->content }}</textarea><br>
         </div>
     </div>
                     
             {!! Form::close() !!}
     </div>
+    
+        
     <script>
+    // twitter共有機能
+    
         document.getElementById("tweet").addEventListener('click', function(event) {
         event.preventDefault();
         var left = Math.round(window.screen.width / 2 - 275);
@@ -50,5 +65,16 @@
             null,
             "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + left + ",top=" + top);
     });
+    
+    
+    // textareaの文字をダウンロードする機能
+        document.querySelector('#DLlink').onclick = function() {
+            var text = document.querySelector('#content').value;
+            this.href = 'data:text/plain;charset=utf-8,'
+                + encodeURIComponent(text);
+        };
+    
     </script>
+    
+
 @endsection
