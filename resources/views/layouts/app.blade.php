@@ -119,7 +119,7 @@
           if (!window.speechSynthesis) return;
           speechSynthesis.cancel();
         });
-        Resources
+        
         
        </script>
 

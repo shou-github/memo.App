@@ -45,7 +45,7 @@
                         <a href="" id="DLlink" download="{{ $memo->content }}.txt" class="btn" style="background-color:#b8860b; color:white; float:right;" type="button"><i class="fas fa-download"></i> download</a>
                    </p>
                        
-                    <textarea contenteditable class="form-control"  onkeyup="ShowLength(value);" name="content" cols="50" rows="18" id="content">{{ $memo->content }}</textarea><br>
+                    <textarea contenteditable class="form-control"  onkeyup="ShowLength(value);" name="content" cols="50" rows="14" id="content">{{ $memo->content }}</textarea><br>
         </div>
     </div>
                     
