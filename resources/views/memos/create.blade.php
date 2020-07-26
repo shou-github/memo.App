@@ -29,7 +29,8 @@
                 </div>
                 
                     <!--音声読み上げ機能-->
-                    <p> 
+                    <p style="font-size:30px;"> 
+                        <i class="fas fa-volume-up"> </i>
                         <!--英語-->
                         <button class="btn" style="background-color:#0000FF; color:white;" id="button1" type="button">English</button>
                         <!--日本語-->
@@ -57,7 +58,6 @@
         
     <script>
     // twitter共有機能
-    
         document.getElementById("tweet").addEventListener('click', function(event) {
         event.preventDefault();
         var left = Math.round(window.screen.width / 2 - 275);
