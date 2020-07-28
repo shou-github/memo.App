@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'MemosController@index');
-
 Route::resource('memos', 'MemosController');
 
 

@@ -74,7 +74,6 @@ class MemosController extends Controller
         return redirect('/');
     }
     
-
     // putまたはpatchでmemos/idにアクセスされた場合の更新処理
     public function update(Request $request, $id)
     {

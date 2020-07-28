@@ -28,6 +28,7 @@
                     {!! Form::label('content', 'content') !!}
                 </div>
                 
+                
                     <!--音声読み上げ機能-->
                     <p style="font-size:30px;"> 
                         <i class="fas fa-volume-up"> </i>
