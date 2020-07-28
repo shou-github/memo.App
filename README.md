@@ -54,15 +54,19 @@
         <li>herokuでデブロイ</li>
     </ul>
     
-    <h2>使用言語</h2>
+    <h2>獲得しているスキル</h2>
     
     <ul>
-        <li>html</li>
+        <li>aws Laravel環境構築</li>
+        
+        <li>html css</li>
         
         <li>bootstrap</li>
         
         <li>js</li>
         
         <li>php/laravel</li>
+        
+        
     </ul>
     
