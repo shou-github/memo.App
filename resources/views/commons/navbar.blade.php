@@ -4,6 +4,7 @@
     
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
+              {!! link_to_route('logout.get', 'Logout') !!}
                 <li><time style="font-weight:bold;"></time></li>
             </ul>
     </nav>
