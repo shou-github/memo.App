@@ -15,9 +15,10 @@
             </div>
         </div>
         @else
-        <div class="center jumbotron">
+        <div class="center jumbotron" style=" width:980px; background-image:url({{ asset('memo.jpg') }}); center no-repeat; background-size: cover;">
             <div class="text-center">
-                <h1>Welcome to the memos</h1>
+                <h1 style="color: #00ff00;-webkit-text-stroke: 1px red; font-weight:bold; font-style:oblique; font-size:70px;" >Welcome to memo.app ! !</h1>
+
                 {{-- ユーザ登録ページへのリンク --}}
                 {!! link_to_route('signup.get', 'Sign up', [], ['class' => 'btn btn-lg btn-primary']) !!}
                 {!! link_to_route('login', 'Login', [], ['class' => 'btn btn-lg btn-success']) !!}

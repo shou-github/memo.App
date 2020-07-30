@@ -3,7 +3,7 @@
 @section('content')
 
         <div class="text-center center jumbotron" style="background:url(main.jpg);　center no-repeat; background-size: cover;   color: #1E90FF;-webkit-text-stroke: 1px white;">
-            <h1 style="font-weight:bold; font-style:oblique; font-size:70px;">Welcome to memo.App ! !</h1>
+            <h1 style="font-weight:bold; font-style:oblique; font-size:70px;">Welcome back <?php $user = Auth::user(); ?>{{ $user->name }} ! !</h1>
             {!! link_to_route('memos.create', 'New entry', [], ['class' => 'btn btn-lg btn-info']) !!}
             
         </div>

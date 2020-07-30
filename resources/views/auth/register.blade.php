@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h1 style="color:#00ff00;-webkit-text-stroke: 1px blue; font-style:oblique; font-weight:bold;" >Sign up</h1>
     </div>
-
+    
     <div class="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-sm-6 offset-sm-3" style="color:black;-webkit-text-stroke: 1px white; font-weight:bold; font-size:20px;">
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
@@ -30,9 +30,10 @@
                 </div>
 
                 {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
-            {!! Form::close() !!}
-                <p class="mt-2">{!! link_to_route('login', 'Login') !!}</p>
+                {!! link_to_route('login', 'Login', [], ['class' => 'btn btn-lg btn-success']) !!}
 
+            {!! Form::close() !!}
         </div>
     </div>
+
 @endsection

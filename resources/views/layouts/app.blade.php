@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>memo.App</title>
+        <title>memo.app</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         
@@ -14,18 +14,33 @@
             
             // 削除する前の確認機能
             function Delete_check(){
-                let checked = confirm("Can I delete it?");
+                let checked = confirm("delete?");
+                if (checked == true) {
+                    return true;
+            } else {
+                    return false;
+            }
+            
+            }
+            
+            function Logout_check(){
+                let checked = confirm("logout?");
                 if (checked == true) {
                     return true;
             } else {
                     return false;
             }
         }
+        
+        
         </script>
 
     </head>
-      
-    <body style="background-image:url({{ asset('sky.jpg') }}); center no-repeat; background-size: cover;">
+     @if (Auth::check())
+            <body style="background-image:url({{ asset('sky.jpg') }}); center no-repeat; background-size: cover;">
+        @else
+            <body style="background-image:url({{ asset('beach.jpg') }}); center no-repeat; background-size: cover;">
+        @endif 
 
        
         @include('commons.navbar')
