@@ -6,26 +6,26 @@
     </div>
     
     <div class="row">
-        <div class="col-sm-6 offset-sm-3" style="color:black;-webkit-text-stroke: 1px white; font-weight:bold; font-size:20px;">
+        <div class="col-sm-6 offset-sm-3" style="font-weight:bold; font-size:20px;">
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('name', 'Name') !!}
+                    {!! Form::label('name', 'Name', ['style' => 'color:black;-webkit-text-stroke: 1px white']) !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('email', 'Email') !!}
+                    {!! Form::label('email', 'Email', ['style' => 'color:black;-webkit-text-stroke: 1px white']) !!}
                     {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::label('password', 'Password', ['style' => 'color:black;-webkit-text-stroke: 1px white']) !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'Confirmation') !!}
+                    {!! Form::label('confirmation', 'Confirmation', ['style' => 'color:black;-webkit-text-stroke: 1px white']) !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
