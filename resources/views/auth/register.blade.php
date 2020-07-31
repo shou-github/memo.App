@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1 style="color:#00ff00;-webkit-text-stroke: 1px blue; font-style:oblique; font-weight:bold;" >Sign up</h1>
+        <h1 style="color:#00ff00;-webkit-text-stroke: 1px blue; font-style:oblique; font-weight:bold;">Sign up</h1>
     </div>
     
     <div class="row">

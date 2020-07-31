@@ -21,7 +21,7 @@
                     return false;
             }
             
-            }
+        }
             
             function Logout_check(){
                 let checked = confirm("logout?");
@@ -134,6 +134,9 @@
           if (!window.speechSynthesis) return;
           speechSynthesis.cancel();
         });
+        
+        
+        
         
        </script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

@@ -19334,6 +19334,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./count */ "./resources/js/count.js");
 
+window.Vue = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))["default"];
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19376,7 +19378,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 $(function () {
-  alert('sample');
+  alert('count');
 });
 
 /***/ }),
@@ -19392,15 +19394,27 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/ts/app.ts":
+/*!*****************************!*\
+  !*** ./resources/ts/app.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/ts-loader/index.js):\nError: \u001b[31merror while parsing tsconfig.json\u001b[39m\n    at Object.loader (/home/ubuntu/environment/memo.app/node_modules/ts-loader/dist/index.js:19:18)");
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/ts/app.ts ./resources/sass/app.scss ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ubuntu/environment/memo.App/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ubuntu/environment/memo.App/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ubuntu/environment/memo.app/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/ubuntu/environment/memo.app/resources/ts/app.ts */"./resources/ts/app.ts");
+module.exports = __webpack_require__(/*! /home/ubuntu/environment/memo.app/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
