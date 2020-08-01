@@ -26,27 +26,16 @@
     
     
 * データベース mysql
-        
+
 * フレームワーク　laravel
-        
+
+* 使用言語　js/jQuery php html 
+
 * githubでプッシュ
         
 * herokuでデブロイ
     
     
-## 現在獲得しているスキル
-    
-* github(push pull commit etc...)issue 
 
-* html css
-        
-* bootstrap
-        
-* Javascript
-        
-* php/laravel
-        
-        
-    
     
 

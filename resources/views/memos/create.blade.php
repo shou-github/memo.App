@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-  
-  <h1 class="text-center" style="color: red;-webkit-text-stroke: 2px #00FFFF; font-weight:bold; font-style:oblique; font-size:60px;">New entry page</h1>
+  <div class="center jumbotron offset-sm-1 col-sm-11" style="background-image:url({{ asset('note.jpg') }}); center no-repeat; background-size: cover;">>
+  <h1 class="text-center" style="color: red;-webkit-text-stroke: 2px #00FFFF; font-weight:bold; font-style:oblique; font-size:50px;">New entry page</h1>
+  </div>
    <div class="row">
-        <div class="offset-sm-2 col-sm-10">
+        <div class="offset-sm-1 col-sm-11">
             {!! Form::model($memo, ['route' => 'memos.store']) !!}
            
            <!--トップページにもどる-->
@@ -15,23 +16,21 @@
            
            
                 <div class="form-group" style="font-size:30px;">
-                    {!! Form::label('title', 'title') !!}
+                    {!! Form::label('title', 'title', ['style' => 'color:white']) !!}
                     {!! Form::text('title', null, ['class' => 'form-control']) !!}
                 </div>
                
                <!--textareaの文字数表示-->
                 <div class="form-group" style="font-size:30px;">  
-                   <div class="form-inline float-right">
+                   <div class="form-inline float-right"  style="color:white;">
                         <p>Count :</p>
                         <p id="inputlength">0</p>
                     </div>
-                    {!! Form::label('content', 'content') !!}
+                    {!! Form::label('content', 'content', ['style' => 'color:white']) !!}
                 </div>
-                
-                
                     <!--音声読み上げ機能-->
                     <p style="font-size:30px;"> 
-                        <i class="fas fa-volume-up"> </i>
+                        <i class="fas fa-volume-up" style="color:white;"> </i>
                         <!--英語-->
                         <button class="btn" style="background-color:#0000FF; color:white;" id="button1" type="button">English</button>
                         <!--日本語-->
@@ -39,7 +38,7 @@
                         <!--読み上げ中止-->
                         <button class="btn" style="background-color:red; color:white;" id="button3" type="button">stop</button>
                         
-                    <!--textarea内の文字を選択する機能-->
+                        <!--textarea内の文字を選択する機能-->
                         <button class="btn" style="background-color:#5D99FF; color:white;" onclick="Clipboard()" class="put" type="button">select all</button>
                         
                        <!--twitter共有機能-->

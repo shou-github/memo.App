@@ -35,8 +35,6 @@ class MemosController extends Controller
             'memo' => $memo,
             ]);
     }
-    
-     
     /**
      * Store a newly created resource in storage.
      *
@@ -50,7 +48,7 @@ class MemosController extends Controller
 
         // バリデーション
        $request->validate([
-            'title' => 'required|max:20',
+            'title' => 'required|max:10',
             'content' => 'required',
         ]);
 
@@ -61,7 +59,8 @@ class MemosController extends Controller
 
         // 前のURLへリダイレクトさせる
         return redirect('/');
-       
+        
+        
     }
     
     // getでmemos/id/editにアクセスされた場合の更新画面表示処理
@@ -84,7 +83,7 @@ class MemosController extends Controller
     {
         // バリデーション
         $this->validate($request, [
-            'title' => 'required|max:20', 
+            'title' => 'required|max:10', 
             'content' => 'required',
         ]);
         

@@ -31,16 +31,11 @@
                     return false;
             }
         }
-        
-        
         </script>
-
     </head>
-     @if (Auth::check())
-            <body style="background-image:url({{ asset('sky.jpg') }}); center no-repeat; background-size: cover;">
-        @else
-            <body style="background-image:url({{ asset('beach.jpg') }}); center no-repeat; background-size: cover;">
-        @endif 
+     
+            <body style="background-image:url({{ asset('star.jpg') }}); center no-repeat; background-size: cover;">
+       
 
        
         @include('commons.navbar')

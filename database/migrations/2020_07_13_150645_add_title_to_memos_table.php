@@ -14,7 +14,7 @@ class AddTitleToMemosTable extends Migration
     public function up()
     {
         Schema::table('memos', function (Blueprint $table) {
-             $table->string('title', 20);
+             $table->string('title', 10);
             //
         });
     }
