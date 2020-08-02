@@ -20,6 +20,7 @@ class MemosController extends Controller
             // メモ一覧viewでそれを表示
             return view('memos.index', [
                 'memos' => $memos,
+                'user' => $user,
             ]);
             return redirect('/');
         }

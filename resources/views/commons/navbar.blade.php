@@ -6,7 +6,24 @@
     
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
+              
+          <form style="display:flex;" method="POST" action="{{route('users.update',$user->id)}}" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <input type="file"  name="image" id="img">
             
+            <div class="form-submit">
+              <button class="btn" style="background-color:blue; color:white; margin-right:50px;" type="submit">Edit</button>
+            </div>
+          </form>
+           @if($user->image == null)
+
+            <img style="border-radius:100%; width:70px; height:70px; margin-right:30px;" src="{{ Gravatar::get($user->email) }}" alt="">
+        
+        @else
+        <img style="border-radius:100%; width:70px; height:70px; margin-right:30px;" src="{{ Storage::disk('s3')->url($user->image) }}">
+
+        @endif
             <div onclick="return Logout_check()">
               {!! link_to_route('logout.get', 'Logout', [], ['class' => 'btn btn-lg btn-secondary']) !!}
             </div>
