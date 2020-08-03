@@ -21,10 +21,13 @@
                 </div>
 
                 {!! Form::submit('Log in', ['class' => 'btn btn-success btn-block']) !!}
-            {!! Form::close() !!}
 
             {{-- ユーザ登録ページへのリンク --}}
+            <div style="margin-top:20px;">
             {!! link_to_route('signup.get', 'Sign up', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
+        {!! Form::close() !!}
+
         </div>
         
     </div>

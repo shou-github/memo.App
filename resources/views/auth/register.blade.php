@@ -30,7 +30,9 @@
                 </div>
 
                 {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                <div style="margin-top:20px;">
                 {!! link_to_route('login', 'Login', [], ['class' => 'btn btn-lg btn-success']) !!}
+                </div>
 
             {!! Form::close() !!}
         </div>

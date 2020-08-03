@@ -8,7 +8,6 @@
             {!! link_to_route('memos.create', 'New entry', [], ['class' => 'btn btn-lg btn-info']) !!}
     </div>
         
-
     @if (count($memos) > 0)
     
 

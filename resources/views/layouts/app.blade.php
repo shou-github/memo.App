@@ -31,6 +31,11 @@
                     return false;
             }
         }
+        
+        $('#change').on('click', function() {  
+            !alert('このスクリプトを実行しますか？'); 
+        return false;  
+        });  
         </script>
     </head>
      

@@ -17,14 +17,16 @@ class MemosController extends Controller
             $user = \Auth::user();
             // メモ更新順で取得
             $memos = $user->memos()->orderBy('updated_at', 'desc')->paginate(25);
+            
+            
             // メモ一覧viewでそれを表示
-            return view('memos.index', [
+            return view('memos.index',[
                 'memos' => $memos,
-                'user' => $user,
             ]);
             return redirect('/');
         }
          return view('welcome', $data);
+         return view('memos.icon');
     }   
     // getでmemos/createにアクセスされた場合の新規作成画面の表示処理
     public function create()
@@ -100,11 +102,16 @@ class MemosController extends Controller
             $memo->save();
             
         }
-        
-        
         return redirect('/');
-            
+    }
+    
+    public function icon()
+    {
         
+        // ユーザ一覧ビューでそれを表示
+        return view('memos.icon', [
+            'memos' => $memos,
+        ]);
     }
 
     // deleteでmemos/idにアクセスされた場合の削除処理する

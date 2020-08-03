@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="center jumbotron offset-sm-1 col-sm-11" style="background-image:url({{ asset('note.jpg') }}); center no-repeat; background-size: cover;">>
+  <div class="center jumbotron offset-sm-1 col-sm-11" style="background-image:url({{ asset('note.jpg') }}); center no-repeat; background-size: cover;">
   <h1 class="text-center" style="color: red;-webkit-text-stroke: 2px #00FFFF; font-weight:bold; font-style:oblique; font-size:50px;">New entry page</h1>
   </div>
    <div class="row">

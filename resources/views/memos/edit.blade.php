@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="center jumbotron offset-sm-1 col-sm-11" style="background-image:url({{ asset('memo.jpg') }}); center no-repeat; background-size: cover;">>
+  <div class="center jumbotron offset-sm-1 col-sm-11" style="background-image:url({{ asset('memo.jpg') }}); center no-repeat; background-size: cover;">
 <h1 class="text-center" style="color: #FFFF00;-webkit-text-stroke: 2px #00FFFF; font-style:italic; font-weight:bold; font-size:60px;">Edit page</h1>  </div>
    <div class="row">
         <div class="offset-sm-1 col-sm-11">
