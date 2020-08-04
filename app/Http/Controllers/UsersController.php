@@ -12,10 +12,10 @@ use App\User;
 
 class UsersController extends Controller
 {
-   
+//   画像を更新する
     public function update(Request $request, $id)
     {
-        
+        // バリデーション
         $this->validate($request, [
             'image' => 'required',
         ]);
@@ -30,14 +30,14 @@ class UsersController extends Controller
         
         $file_path= 'images';//.$fileName;
         // $image->save(public_path().$file_path);
-        
+        // S3に接続
         $path = Storage::disk('s3')->putFile('/', $file, 'public');
 
        
-        // idの値でメモを検索して取得
+        // idの値でユーザーを検索して取得
         $user = User::findOrFail($id);
        
-        // メモを更新する
+        // ログイン中に画像を表示し保存する
         if (\Auth::id() === $user->id) {
             $user->image =$path;
             $user->save();

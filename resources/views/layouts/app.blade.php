@@ -22,7 +22,7 @@
             }
             
         }
-            
+            // ログアウトする前の確認機能
             function Logout_check(){
                 let checked = confirm("logout?");
                 if (checked == true) {
@@ -31,11 +31,6 @@
                     return false;
             }
         }
-        
-        $('#change').on('click', function() {  
-            !alert('このスクリプトを実行しますか？'); 
-        return false;  
-        });  
         </script>
     </head>
      

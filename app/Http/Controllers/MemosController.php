@@ -78,6 +78,7 @@ class MemosController extends Controller
             'memo' => $memo,
         ]);
             }
+        // ページをリダイレクトする
         return redirect('/');
         
     }
