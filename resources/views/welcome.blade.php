@@ -4,7 +4,7 @@
     @if (Auth::check())
         {{ Auth::user()->name }}
         @else
-        <div class="center jumbotron" style="background-image:url({{ asset('memo.jpg') }}); center no-repeat; background-size: cover; height:800px;">
+        <div class="center jumbotron" style="background-image:url({{ asset('memo.jpg') }}); center no-repeat; background-size: cover; height:820px;">
             <div class="text-center">
                 <h1 style="color: #00ff00;-webkit-text-stroke: 1px red; font-weight:bold; font-style:oblique; font-size:50px; margin-bottom:50px;">Welcome to memo.app ! !</h1>
 

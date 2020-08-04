@@ -29,7 +29,7 @@
                     <!--音声読み上げ機能-->
                     <p style="font-size:30px;"> 
                         <!--英語-->
-                        <button class="btn" style="background-color:#0000FF; color:white;" id="button1" type="button"><i class="fas fa-volume-up"></i> English</button>
+                        <button class="btn" style="background-color:#0000FF; color:white; margin-right:30px;" id="button1" type="button"><i class="fas fa-volume-up"></i> English</button>
                         <!--日本語-->
                         <button class="btn" style="background-color:#FF6600; color:white;" id="button2" type="button"><i class="fas fa-volume-up"></i> Japanese</button>
                         <!--読み上げ中止-->
