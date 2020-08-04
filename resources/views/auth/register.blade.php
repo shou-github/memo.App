@@ -34,7 +34,6 @@
                 <div style="margin-top:20px;">
                 {!! link_to_route('login', 'Login', [], ['class' => 'btn btn-lg btn-success']) !!}
                 </div>
-
             {!! Form::close() !!}
         </div>
     </div>
