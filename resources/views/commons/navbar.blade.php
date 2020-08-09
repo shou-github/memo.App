@@ -42,7 +42,6 @@
             </ul>
             </ul>
         @else
-
           <a class="navbar-brand" style="font-size:30px; font-weight:bold; color:black;" href="/"><i class="far fa-edit"></i>memo.app</a>  
     
             <ul class="navbar-nav mr-auto"></ul>

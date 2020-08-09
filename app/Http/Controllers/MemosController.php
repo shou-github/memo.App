@@ -26,7 +26,6 @@ class MemosController extends Controller
             return redirect('/');
         }
          return view('welcome', $data);
-         return view('memos.icon');
     }   
     // getでmemos/createにアクセスされた場合の新規作成画面の表示処理
     public function create()
@@ -54,7 +53,8 @@ class MemosController extends Controller
             'title' => 'required|max:10',
             'content' => 'required',
         ]);
-
+        
+        
             $request->user()->memos()->create([
             'content' => $request->content,
             'title' => $request->title,
@@ -91,6 +91,7 @@ class MemosController extends Controller
             'content' => 'required',
         ]);
         
+        
         // idの値でメモを検索して取得
         $memo = Memo::findOrFail($id);
         
@@ -101,20 +102,10 @@ class MemosController extends Controller
             $memo->title = $request->title;
             $memo->content = $request->content;
             $memo->save();
-            
         }
         return redirect('/');
     }
     
-    public function icon()
-    {
-        
-        // ユーザ一覧ビューでそれを表示
-        return view('memos.icon', [
-            'memos' => $memos,
-        ]);
-    }
-
     // deleteでmemos/idにアクセスされた場合の削除処理する
     public function destroy($id)
     {

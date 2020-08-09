@@ -28,10 +28,10 @@ class UsersController extends Controller
         //     $constraint->aspectRatio();
         // });
         
-        $file_path= 'images';//.$fileName;
+        // $file_path= 'images';//.$fileName;
         // $image->save(public_path().$file_path);
         // S3に接続
-        $path = Storage::disk('s3')->putFile('/', $file, 'public');
+        $path = Storage::disk('s3')->putFile('images', $file, 'public');
 
        
         // idの値でユーザーを検索して取得
