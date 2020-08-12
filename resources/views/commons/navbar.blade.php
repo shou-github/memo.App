@@ -1,9 +1,15 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to top, rgb(255, 172, 17), rgb(255, 231, 17));">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background: linear-gradient(to top, rgb(255, 172, 17), rgb(255, 231, 17));">
       <!--ログイン中の動作-->
 @if (Auth::check())
           <p style="font-size:30px; font-weight:bold;"><i class="fas fa-edit"></i><?php $user = Auth::user(); ?>{{ $user->name }}'s page</p>  
     
+    
+            <button type="button" class="navbar-toggler" style="background-color:orange;"  data-toggle="collapse" data-target="#nav-bar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+           <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">

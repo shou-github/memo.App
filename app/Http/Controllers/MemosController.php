@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Memo;
 
+use App\Http\Requests\MemoRequest;
+
 class MemosController extends Controller
 {
     // getでmemos/にアクセスされた場合の「一覧表示処理」
@@ -18,12 +20,10 @@ class MemosController extends Controller
             // メモ更新順で取得
             $memos = $user->memos()->orderBy('updated_at', 'desc')->paginate(25);
             
-            
             // メモ一覧viewでそれを表示
             return view('memos.index',[
                 'memos' => $memos,
             ]);
-            return redirect('/');
         }
          return view('welcome', $data);
     }   
@@ -45,15 +45,9 @@ class MemosController extends Controller
      */
      
      // postでmemos/にアクセスされた場合の新規作成処理
-    public function store(Request $request)
+    public function store(MemoRequest $request)
     {
 
-        // バリデーション
-       $request->validate([
-            'title' => 'required|max:10',
-            'content' => 'required',
-        ]);
-        
         
             $request->user()->memos()->create([
             'content' => $request->content,
@@ -83,13 +77,8 @@ class MemosController extends Controller
         
     }
     // putまたはpatchでmemos/idにアクセスされた場合の更新処理
-    public function update(Request $request, $id)
+    public function update(MemoRequest $request, $id)
     {
-        // バリデーション
-        $this->validate($request, [
-            'title' => 'required|max:10', 
-            'content' => 'required',
-        ]);
         
         
         // idの値でメモを検索して取得

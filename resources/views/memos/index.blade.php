@@ -30,7 +30,7 @@
                     <!--メモのタイトル表示-->
                     <td>{{ $memo->title }}</td>
                     <td style="font-family:arial narrow; font-size:20px;">{{ $memo->updated_at }}</td>
-                    <td>{!! link_to_route('memos.edit', 'Edit', ['memo' => $memo->id], ['class' => 'btn btn btn-success']) !!}
+                    <td>{!! link_to_route('memos.edit', 'Edit', ['memo' => $memo->id], ['class' => 'btn btn-success']) !!}
                     </td>
                     <!--メモ削除ボタン-->
                     <td onclick="return Delete_check()">{!! Form::model($memo, ['route' => ['memos.destroy', $memo->id], 'method' => 'delete']) !!}
